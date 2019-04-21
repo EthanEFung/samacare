@@ -18,7 +18,12 @@ From the command line run the following.
 npm install
 npm run db:reset
 npm run dev
+```
 
+The API is now ready. Navigate to a second terminal and from the root of 
+the project run the following commands.
+
+```
 cd client
 yarn start
 
