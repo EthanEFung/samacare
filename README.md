@@ -2,7 +2,8 @@
 
 ## Setting up the project
 
-First add the relevant .env file to the root of the directory.
+First add the relevant .env file to the root of the directory. This should
+have been emailed to you, but if not, please request for the .env file.
 
 Dependencies
 ```
