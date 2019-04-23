@@ -9,12 +9,12 @@ class UploaderCtrl {
       // policy.isAuthorized()
       const uploader = new Uploader(/* scope */);
       const response = await uploader.upload(file);
-      
+
       console.log('done!', response)
       return res.json(response);
     } catch (e) {
       console.log('nope!', e)
-      return res.json({
+      return res.status(500).json({
         status: e.status,
         data: e
       });

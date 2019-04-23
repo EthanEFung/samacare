@@ -6,7 +6,6 @@ import UploaderPage from './components/UploaderPage';
 import ConfigurationsPage from './components/ConfigurationsPage';
 import './App.css';
 
-
 class App extends Component {
 
   render() {
@@ -18,7 +17,7 @@ class App extends Component {
         </nav>
         <Route path='/' exact component={Home} />
         <Route path='/upload' component={UploaderPage} />
-        <Route path='/configurations' component={ConfigurationsPage} /> 
+        <Route path='/configurations' component={ConfigurationsPage} />
       </div>
     );
   }

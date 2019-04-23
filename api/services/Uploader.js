@@ -4,18 +4,17 @@ const File = require('../models/File');
 const uuid = require('uuid')
 
 class Uploader {
-  
+
   async upload(file) {
+    // Nice, and nice useage of await/async
     const image = await cloudinary.uploader.upload(file.path);
-    
-    await File.findOrCreate({
+
+    return File.findOrCreate({
       where: {
         id: uuid.v4(),
         secure_url: image.secure_url
       }
     });
-    
-    return image;
   }
 }
 

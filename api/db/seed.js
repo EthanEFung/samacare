@@ -8,11 +8,9 @@ const sequelize = require('../db/config');
 (async function syncTables() {
   try {
     await sequelize.authenticate();
+    await sequelize.sync({ force: true });
 
-    await File.sync({force: true});
-    await Configuration.sync({force: true});
-    await Input.sync({force: true});
-
+    // These relationships seem to make the most sense if set w/ the models themselves
     File.belongsTo(Configuration);
     Input.belongsTo(Configuration);
     Configuration.hasOne(File);

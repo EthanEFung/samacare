@@ -8,6 +8,8 @@ router.get('/user', (req, res) => {
   res.send({ express: 'CONNECTED' });
 });
 
+// Interesting class pattern for controllers. Haven't seen this before - what do you think the benefits are?
+// Seems like there's not much you would do w/ the constructor. Also, it seems like the routes would always be singletons
 const uploaderCtrl = new UploaderCtrl();
 router.post('/upload', uploaderCtrl.post);
 
