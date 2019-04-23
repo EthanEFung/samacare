@@ -4,15 +4,16 @@ require("@babel/core").transform("code", {
 });
 
 const express = require('express');
-const app = express();
-const port = process.env.PORT || 8080;
 const cors = require('cors');
-const router = require('./router');
 const fs = require('fs');
-var cloudinary = require('cloudinary').v2;
+const cloudinary = require('cloudinary').v2;
 const formData = require('express-form-data');
+
+const router = require('./router');
 const db = require('./db/config');
 
+const app = express();
+const port = process.env.PORT || 8080;
 
 db.authenticate()
   .then(() => console.log('authorized!'))
@@ -31,9 +32,7 @@ app.use(cors({
 app.use(formData.parse());
 app.use('/', router);
 
-
 app.listen(port, err => {
   if (err) throw err;
   console.log(`Listening on port ${port}`);
 });
-
